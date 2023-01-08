@@ -11,4 +11,14 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+
+    <string name="numberNameSurnameTextView">201913709082 — Murat Sancak</string>
+    <string name="loginUpperTextView">LOGIN</string>
+    <string name="loginLowerTextView">Login</string>
+    <string name="signUpUpperTextView">SIGN UP</string>
+    <string name="signUpLowerTextView">Sign Up</string>
+
+    <string name="emailHint">Email</string>
+    <string name="passwordHint">Password</string>
+    <string name="orTextView">or</string>
 </resources>
