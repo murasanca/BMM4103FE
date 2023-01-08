@@ -1,3 +1,6 @@
+ // Murat Sancak
+// 201913709082
+
 package com.murasanca.BMM4103FE;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,68 +23,71 @@ public class MainActivity extends AppCompatActivity
 		super.onCreate(savedInstanceState);
 		
 		getWindow().setFlags
-				(
-						WindowManager.LayoutParams.FLAG_FULLSCREEN,
-						WindowManager.LayoutParams.FLAG_FULLSCREEN
-				);
+		(
+			WindowManager.LayoutParams.FLAG_FULLSCREEN,
+			WindowManager.LayoutParams.FLAG_FULLSCREEN
+		);
 		
 		setContentView(R.layout.activity_main);
 		
 		Intent
-				MainActivity2HomeActivity=new Intent(MainActivity.this,HomeActivity.class),
-				MainActivity2NavigationDrawerActivity=new Intent(MainActivity.this,NavigationDrawerActivity.class);
+			MainActivity2HomeActivity=new Intent(MainActivity.this,HomeActivity.class),
+			MainActivity2NavigationDrawerActivity=new Intent(MainActivity.this,NavigationDrawerActivity.class);
 		FirebaseAuth firebaseAuth=FirebaseAuth.getInstance();
 		FrameLayout
-				mainFrameLayout=findViewById(R.id.mainFrameLayout),
-				splashScreenFrameLayout=findViewById(R.id.splashScreenFrameLayout);
+			mainFrameLayout=findViewById(R.id.mainFrameLayout),
+			splashScreenFrameLayout=findViewById(R.id.splashScreenFrameLayout);
 		
-		firebaseAuth.signOut();
+		//firebaseAuth.signOut();
 		
 		if(firebaseAuth.getCurrentUser()==null)
 		{
 			new Handler().postDelayed
-					(
-							()->
-							{
-								splashScreenFrameLayout.setVisibility(View.GONE);
-								mainFrameLayout.setVisibility(View.VISIBLE);
-							},
-							2048
-					);
+			(
+				()->
+				{
+					splashScreenFrameLayout.setVisibility(View.GONE);
+					mainFrameLayout.setVisibility(View.VISIBLE);
+				},
+				2048
+			);
 		}
 		else //if(firebaseAuth.getCurrentUser()!=null)
 		{
 			new Handler().postDelayed
-					(
-							()->
-							{
-								startActivity(MainActivity2NavigationDrawerActivity);
-								overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
-							},
-							2048
-					);
+			(
+				()->
+				{
+					startActivity(MainActivity2NavigationDrawerActivity);
+					overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+				},
+				2048
+			);
 		}
 		
 		findViewById(R.id.loginMainButton).setOnClickListener
-				(
-						v->
-						{
-							MainActivity2HomeActivity.putExtra("loginFrameLayoutVisibility",View.VISIBLE);
-							MainActivity2HomeActivity.putExtra("signUpFrameLayoutVisibility",View.GONE);
-							startActivity(MainActivity2HomeActivity);
-							overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
-						}
-				);
+		(
+			v->
+			{
+				MainActivity2HomeActivity.putExtra("loginFrameLayoutVisibility",View.VISIBLE);
+				MainActivity2HomeActivity.putExtra("signUpFrameLayoutVisibility",View.GONE);
+				startActivity(MainActivity2HomeActivity);
+				overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+			}
+		);
 		
 		findViewById(R.id.signUpMainButton).setOnClickListener
-				(
-						v->
-						{
-							MainActivity2HomeActivity.putExtra("loginFrameLayoutVisibility",View.GONE);
-							MainActivity2HomeActivity.putExtra("signUpFrameLayoutVisibility",View.VISIBLE);
-							startActivity(MainActivity2HomeActivity);
-							overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
-						}
-				);
+		(
+			v->
+			{
+				MainActivity2HomeActivity.putExtra("loginFrameLayoutVisibility",View.GONE);
+				MainActivity2HomeActivity.putExtra("signUpFrameLayoutVisibility",View.VISIBLE);
+				startActivity(MainActivity2HomeActivity);
+				overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+			}
+		);
 	}
 }
+
+ // 201913709082
+// Murat Sancak
