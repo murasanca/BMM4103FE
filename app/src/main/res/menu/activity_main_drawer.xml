@@ -7,22 +7,22 @@
         <item
             android:id="@+id/nav_createGroup"
             android:icon="@drawable/ic_round_groups_24"
-            android:title="@string/createGroup" />
+            android:title="@string/createGroupItem" />
         <item
             android:id="@+id/nav_addMembers2Group"
             android:icon="@drawable/ic_round_group_add_24"
-            android:title="@string/addMembers2Group" />
+            android:title="@string/addMembers2GroupItem" />
         <item
             android:id="@+id/nav_createMessage"
             android:icon="@drawable/ic_round_create_24"
-            android:title="@string/createMessage" />
+            android:title="@string/createMessageItem" />
         <item
             android:id="@+id/nav_sendMessage"
             android:icon="@drawable/ic_round_send_24"
-            android:title="@string/sendMessage" />
+            android:title="@string/sendMessageItem" />
         <item
-            android:id="@+id/nav_logout"
+            android:id="@+id/nav_logOut"
             android:icon="@drawable/ic_round_logout_24"
-            android:title="@string/logout" />
+            android:title="@string/logoutItem" />
     </group>
 </menu>

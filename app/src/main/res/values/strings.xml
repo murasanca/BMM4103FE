@@ -24,9 +24,14 @@
 
     <string name="explanation">Mobile Programming Final Exam</string>
 
-    <string name="createGroup">CREATE GROUP</string>
-    <string name="addMembers2Group">ADD MEMBERS TO GROUP</string>
-    <string name="createMessage">CREATE MESSAGE</string>
-    <string name="sendMessage">SEND MESSAGE</string>
-    <string name="logout">LOGOUT</string>
+    <string name="createGroupItem">CREATE GROUP</string>
+    <string name="addMembers2GroupItem">ADD MEMBERS TO GROUP</string>
+    <string name="createMessageItem">CREATE MESSAGE</string>
+    <string name="sendMessageItem">SEND MESSAGE</string>
+    <string name="logoutItem">LOG OUT</string>
+
+    <string name="addMembers2GroupFragment">Add Members to Group</string>
+    <string name="createGroupFragment">Create Group</string>
+    <string name="createMessageFragment">Create Message</string>
+    <string name="sendMessageFragment">Send Message</string>
 </resources>

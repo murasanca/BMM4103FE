@@ -9,7 +9,6 @@ import android.view.Menu;
 import android.view.View;
 import android.view.WindowManager;
 
-import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.navigation.NavController;
@@ -22,7 +21,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.murasanca.BMM4103FE.databinding.ActivityNavigationDrawerBinding;
 
-public class NavigationDrawerActivity extends AppCompatActivity
+ public class NavigationDrawerActivity extends AppCompatActivity
 {
 	
 	private AppBarConfiguration mAppBarConfiguration;
@@ -38,7 +37,7 @@ public class NavigationDrawerActivity extends AppCompatActivity
 			WindowManager.LayoutParams.FLAG_FULLSCREEN
 		);
 		
-		com.murasanca.BMM4103FE.databinding.ActivityNavigationDrawerBinding binding=ActivityNavigationDrawerBinding.inflate(getLayoutInflater());
+		ActivityNavigationDrawerBinding binding=ActivityNavigationDrawerBinding.inflate(getLayoutInflater());
 		setContentView(binding.getRoot());
 		
 		setSupportActionBar(binding.appBarNavigationDrawer.toolbar);
@@ -47,13 +46,13 @@ public class NavigationDrawerActivity extends AppCompatActivity
 		// Passing each menu ID as a set of Ids because each
 		// menu should be considered as top level destinations.
 		mAppBarConfiguration=new AppBarConfiguration.Builder
-				(
-						R.id.nav_addMembers2Group,
-						R.id.nav_createGroup,
-						R.id.nav_createMessage,
-						R.id.nav_sendMessage,
-						R.id.nav_logout
-				).setOpenableLayout(drawer).build();
+		(
+			R.id.nav_addMembers2Group,
+			R.id.nav_createGroup,
+			R.id.nav_createMessage,
+			R.id.nav_sendMessage,
+			R.id.nav_logOut
+		).setOpenableLayout(drawer).build();
 		NavController navController=Navigation.findNavController(this,R.id.nav_host_fragment_content_navigation_drawer);
 		NavigationUI.setupActionBarWithNavController(this,navController,mAppBarConfiguration);
 		NavigationUI.setupWithNavController(navigationView,navController);
@@ -62,7 +61,7 @@ public class NavigationDrawerActivity extends AppCompatActivity
 		(
 			item ->
 			{
-				if(item.getItemId()==R.id.nav_logout)
+				if(item.getItemId()==R.id.nav_logOut)
 				{
 					FirebaseAuth.getInstance().signOut();
 					
