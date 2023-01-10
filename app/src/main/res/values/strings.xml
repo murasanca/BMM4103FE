@@ -21,4 +21,12 @@
     <string name="emailHint">Email</string>
     <string name="passwordHint">Password</string>
     <string name="orTextView">or</string>
+
+    <string name="explanation">Mobile Programming Final Exam</string>
+
+    <string name="createGroup">CREATE GROUP</string>
+    <string name="addMembers2Group">ADD MEMBERS TO GROUP</string>
+    <string name="createMessage">CREATE MESSAGE</string>
+    <string name="sendMessage">SEND MESSAGE</string>
+    <string name="logout">LOGOUT</string>
 </resources>

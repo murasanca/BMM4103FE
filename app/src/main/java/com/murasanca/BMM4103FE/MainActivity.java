@@ -37,6 +37,8 @@ public class MainActivity extends AppCompatActivity
 		FrameLayout
 			mainFrameLayout=findViewById(R.id.mainFrameLayout),
 			splashScreenFrameLayout=findViewById(R.id.splashScreenFrameLayout);
+		mainFrameLayout.setVisibility(getIntent().getIntExtra("mainFrameLayoutVisibility",View.GONE));
+		splashScreenFrameLayout.setVisibility(getIntent().getIntExtra("splashScreenFrameLayoutVisibility",View.VISIBLE));
 		
 		//firebaseAuth.signOut();
 		

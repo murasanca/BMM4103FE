@@ -1,31 +1,30 @@
-package com.murasanca.BMM4103FE.ui.home;
+ // Murat Sancak
+// 201913709082
+
+package com.murasanca.BMM4103FE.ui.sendMessage;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.murasanca.BMM4103FE.databinding.FragmentHomeBinding;
+import com.murasanca.BMM4103FE.databinding.FragmentSendMessageBinding;
 
-public class HomeFragment extends Fragment
+public class sendMessageFragment extends Fragment
 {
-	
-	private FragmentHomeBinding binding;
+	private FragmentSendMessageBinding binding;
 	
 	public View onCreateView(@NonNull LayoutInflater inflater,ViewGroup container,Bundle savedInstanceState)
 	{
-		HomeViewModel homeViewModel=new ViewModelProvider(this).get(HomeViewModel.class);
+		sendMessageViewModel sendMessageViewModel=new ViewModelProvider(this).get(sendMessageViewModel.class);
 		
-		binding=FragmentHomeBinding.inflate(inflater,container,false);
+		binding=FragmentSendMessageBinding.inflate(inflater,container,false);
 		View root=binding.getRoot();
 		
-		final TextView textView=binding.textHome;
-		homeViewModel.getText().observe(getViewLifecycleOwner(),textView::setText);
 		return root;
 	}
 	
@@ -36,3 +35,6 @@ public class HomeFragment extends Fragment
 		binding=null;
 	}
 }
+
+ // 201913709082
+// Murat Sancak

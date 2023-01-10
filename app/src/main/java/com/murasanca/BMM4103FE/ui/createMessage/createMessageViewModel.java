@@ -1,18 +1,21 @@
-package com.murasanca.BMM4103FE.ui.slideshow;
+ // Murat Sancak
+// 201913709082
+
+package com.murasanca.BMM4103FE.ui.createMessage;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class SlideshowViewModel extends ViewModel
+public class createMessageViewModel extends ViewModel
 {
 	
 	private final MutableLiveData<String> mText;
 	
-	public SlideshowViewModel()
+	public createMessageViewModel()
 	{
 		mText=new MutableLiveData<>();
-		mText.setValue("This is slideshow fragment");
+		mText.setValue("This is home fragment");
 	}
 	
 	public LiveData<String> getText()
@@ -20,3 +23,6 @@ public class SlideshowViewModel extends ViewModel
 		return mText;
 	}
 }
+
+ // 201913709082
+// Murat Sancak

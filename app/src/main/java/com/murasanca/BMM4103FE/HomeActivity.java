@@ -103,7 +103,6 @@ public class HomeActivity extends AppCompatActivity
 					else
 						Toast.makeText(getApplicationContext(),"Task is not successful.",Toast.LENGTH_SHORT).show();
 				}
-				
 			)
 		);
 	}
