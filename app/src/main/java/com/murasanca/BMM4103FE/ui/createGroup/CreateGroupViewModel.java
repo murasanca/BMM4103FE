@@ -7,12 +7,12 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class createGroupViewModel extends ViewModel
+public class CreateGroupViewModel extends ViewModel
 {
 	
 	private final MutableLiveData<String> mText;
 	
-	public createGroupViewModel()
+	public CreateGroupViewModel()
 	{
 		mText=new MutableLiveData<>();
 		mText.setValue("This is home fragment");

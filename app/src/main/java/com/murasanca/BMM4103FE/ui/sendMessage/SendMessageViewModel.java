@@ -1,18 +1,18 @@
  // Murat Sancak
 // 201913709082
 
-package com.murasanca.BMM4103FE.ui.addMembers2Group;
+package com.murasanca.BMM4103FE.ui.sendMessage;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class addMembers2GroupViewModel extends ViewModel
+public class SendMessageViewModel extends ViewModel
 {
 	
 	private final MutableLiveData<String> mText;
 	
-	public addMembers2GroupViewModel()
+	public SendMessageViewModel()
 	{
 		mText=new MutableLiveData<>();
 		mText.setValue("This is home fragment");

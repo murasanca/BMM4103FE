@@ -1,7 +1,7 @@
  // Murat Sancak
 // 201913709082
 
-package com.murasanca.BMM4103FE.ui.addMembers2Group;
+package com.murasanca.BMM4103FE.ui.createMessage;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,17 +12,17 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.murasanca.BMM4103FE.databinding.FragmentAddMembersToGroupBinding;
+import com.murasanca.BMM4103FE.databinding.FragmentCreateMessageBinding;
 
-public class addMembers2GroupFragment extends Fragment
+public class CreateMessageFragment extends Fragment
 {
-	private FragmentAddMembersToGroupBinding binding;
+	private FragmentCreateMessageBinding binding;
 	
 	public View onCreateView(@NonNull LayoutInflater inflater,ViewGroup container,Bundle savedInstanceState)
 	{
-		addMembers2GroupViewModel addMembers2GroupViewModel=new ViewModelProvider(this).get(addMembers2GroupViewModel.class);
+		CreateMessageViewModel createMessageViewModel=new ViewModelProvider(this).get(CreateMessageViewModel.class);
 		
-		binding=FragmentAddMembersToGroupBinding.inflate(inflater,container,false);
+		binding=FragmentCreateMessageBinding.inflate(inflater,container,false);
 		View root=binding.getRoot();
 		
 		return root;

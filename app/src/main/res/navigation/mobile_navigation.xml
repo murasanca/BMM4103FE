@@ -7,25 +7,25 @@
 
     <fragment
         android:id="@+id/nav_addMembers2Group"
-        android:name="com.murasanca.BMM4103FE.ui.addMembers2Group.addMembers2GroupFragment"
+        android:name="com.murasanca.BMM4103FE.ui.addMembers2Group.AddMembers2GroupFragment"
         android:label="@string/addMembers2Group"
         tools:layout="@layout/fragment_add_members_to_group" />
 
     <fragment
         android:id="@+id/nav_createGroup"
-        android:name="com.murasanca.BMM4103FE.ui.createGroup.createGroupFragment"
+        android:name="com.murasanca.BMM4103FE.ui.createGroup.CreateGroupFragment"
         android:label="@string/createGroup"
         tools:layout="@layout/fragment_create_group"/>
 
     <fragment
         android:id="@+id/nav_createMessage"
-        android:name="com.murasanca.BMM4103FE.ui.createMessage.createMessageFragment"
+        android:name="com.murasanca.BMM4103FE.ui.createMessage.CreateMessageFragment"
         android:label="@string/createMessage"
         tools:layout="@layout/fragment_create_message"/>
 
     <fragment
         android:id="@+id/nav_sendMessage"
-        android:name="com.murasanca.BMM4103FE.ui.sendMessage.sendMessageFragment"
+        android:name="com.murasanca.BMM4103FE.ui.sendMessage.SendMessageFragment"
         android:label="@string/sendMessage"
         tools:layout="@layout/fragment_send_message"/>
 </navigation>

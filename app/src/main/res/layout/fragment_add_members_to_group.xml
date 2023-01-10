@@ -4,5 +4,5 @@
     android:background="@drawable/bmm4103fe"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.addMembers2Group.addMembers2GroupFragment">
+    tools:context=".ui.addMembers2Group.AddMembers2GroupFragment">
 </androidx.constraintlayout.widget.ConstraintLayout>
