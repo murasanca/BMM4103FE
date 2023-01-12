@@ -1,18 +1,9 @@
 <resources>
     <string name="app_name">BMM4103FE</string>
+    <string name="description">Mobile Programming Final Exam</string>
     <string name="title_activity_navigation_drawer">NavigationDrawerActivity</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
 
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
-
-    <string name="numberNameSurnameTextView">201913709082 — Murat Sancak</string>
     <string name="loginUpperTextView">LOGIN</string>
     <string name="loginLowerTextView">Login</string>
     <string name="signUpUpperTextView">SIGN UP</string>
@@ -22,16 +13,32 @@
     <string name="passwordHint">Password</string>
     <string name="orTextView">or</string>
 
-    <string name="explanation">Mobile Programming Final Exam</string>
-
     <string name="createGroupItem">CREATE GROUP</string>
     <string name="addMembers2GroupItem">ADD MEMBERS TO GROUP</string>
     <string name="createMessageItem">CREATE MESSAGE</string>
     <string name="sendMessageItem">SEND MESSAGE</string>
-    <string name="logoutItem">LOG OUT</string>
+    <string name="logOutItem">LOG OUT</string>
 
     <string name="addMembers2GroupFragment">Add Members to Group</string>
     <string name="createGroupFragment">Create Group</string>
     <string name="createMessageFragment">Create Message</string>
     <string name="sendMessageFragment">Send Message</string>
+
+    <string name="groupNameTextView">Group Name</string>
+    <string name="inputField4GroupName">Input Field for Group Name</string>
+    <string name="groupIconTextView">Group Icon</string>
+    <string name="groupIconImage">Group Icon Image</string>
+    <string name="groupDescriptionTextView">Group Description</string>
+    <string name="inputField4Description">Input Field for Group Description</string>
+    <string name="createGroupButton">CREATE GROUP</string>
+    <string name="deleteGroupButton">DELETE GROUP</string>
+    <string name="updateGroupButton">UPDATE GROUP</string>
+    <string name="groupsTextView">Groups</string>
+
+    <string name="gImageView">Group Image View</string>
+    <string name="gNameTextView">Group Name Text View</string>
+    <string name="gDescriptionTextView">Group Description Text View</string>
+    <string name="gPositionTextView">1</string>
+
+    <string name="numberNameSurnameTextView">201913709082 — Murat Sancak</string>
 </resources>
