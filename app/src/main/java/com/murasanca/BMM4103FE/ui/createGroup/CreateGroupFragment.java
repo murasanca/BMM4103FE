@@ -55,92 +55,144 @@ import java.util.ArrayList;
 		GroupAdapter groupAdapter=new GroupAdapter(root.getContext().getApplicationContext(),groupsClassArrayList);
 		groupsRecyclerView.setAdapter(groupAdapter);
 		
-		groupsDatabaseReference.addChildEventListener(new ChildEventListener(){
-			@Override
-			public void onChildAdded(@NonNull DataSnapshot snapshot,@Nullable String previousChildName)
+		groupsDatabaseReference.addChildEventListener
+		(
+			new ChildEventListener()
 			{
-				groupsClassArrayList.add(new GroupClass(snapshot.getKey(),snapshot.child("Description").getValue(String.class)));
+				@Override
+				public void onChildAdded(@NonNull DataSnapshot snapshot,@Nullable String previousChildName)
+				{
+					groupsClassArrayList.add(new GroupClass(snapshot.getKey(),snapshot.child("Description").getValue(String.class)));
+					
+					groupAdapter.notifyDataSetChanged();
+				}
 				
-				groupAdapter.notifyDataSetChanged();
-			}
-			
-			@Override
-			public void onChildChanged(@NonNull DataSnapshot snapshot,@Nullable String previousChildName)
-			{
-				int index=-1;
-				for(int i=0;i<groupsClassArrayList.size();++i)
-					if(groupsClassArrayList.get(i).getName().equals(snapshot.getKey()))
+				@Override
+				public void onChildChanged(@NonNull DataSnapshot snapshot,@Nullable String previousChildName)
+				{
+					int index=-1;
+					for(int i=0;i<groupsClassArrayList.size();++i)
+						if(groupsClassArrayList.get(i).getName().equals(snapshot.getKey()))
+						{
+							index=i;
+							break;
+						}
+					if(-1!=index)
 					{
-						index=i;
-						break;
+						groupsClassArrayList.set(index,new GroupClass(snapshot.getKey(),snapshot.child("Description").getValue(String.class)));
+						
+						groupAdapter.notifyDataSetChanged();
 					}
-				if(-1!=index)
-				{
-					groupsClassArrayList.set(index,new GroupClass(snapshot.getKey(),snapshot.child("Description").getValue(String.class)));
-					
-					groupAdapter.notifyDataSetChanged();
 				}
-			}
-			
-			@Override
-			public void onChildRemoved(@NonNull DataSnapshot snapshot)
-			{
-				int index=-1;
-				for(int i=0;i<groupsClassArrayList.size();++i)
-					if(groupsClassArrayList.get(i).getName().equals(snapshot.getKey()))
+				
+				@Override
+				public void onChildRemoved(@NonNull DataSnapshot snapshot)
+				{
+					int index=-1;
+					for(int i=0;i<groupsClassArrayList.size();++i)
+						if(groupsClassArrayList.get(i).getName().equals(snapshot.getKey()))
+						{
+							index=i;
+							break;
+						}
+					if(-1!=index)
 					{
-						index=i;
-						break;
+						groupsClassArrayList.remove(index);
+						
+						groupAdapter.notifyDataSetChanged();
 					}
-				if(-1!=index)
+				}
+				
+				@Override
+				public void onChildMoved(@NonNull DataSnapshot snapshot,@Nullable String previousChildName)
 				{
-					groupsClassArrayList.remove(index);
-					
-					groupAdapter.notifyDataSetChanged();
+					int index=groupsClassArrayList.indexOf(new GroupClass(snapshot.getKey(),null));
+					if(-1!=index)
+					{
+						GroupClass groupClass=groupsClassArrayList.get(index);
+						groupsClassArrayList.remove(index);
+						groupsClassArrayList.add(1+index,groupClass);
+						
+						groupAdapter.notifyDataSetChanged();
+					}
+				}
+				
+				@Override
+				public void onCancelled(@NonNull DatabaseError error)
+				{
+					Toast.makeText(root.getContext(),error.toString(),Toast.LENGTH_SHORT).show();
 				}
 			}
-			
-			@Override
-			public void onChildMoved(@NonNull DataSnapshot snapshot,@Nullable String previousChildName)
-			{
-				int index=groupsClassArrayList.indexOf(new GroupClass(snapshot.getKey(),null));
-				if(-1!=index)
-				{
-					GroupClass groupClass=groupsClassArrayList.get(index);
-					groupsClassArrayList.remove(index);
-					groupsClassArrayList.add(1+index,groupClass);
-					
-					groupAdapter.notifyDataSetChanged();
-				}
-			}
-			
-			@Override
-			public void onCancelled(@NonNull DatabaseError error)
-			{
-				Toast.makeText(root.getContext(),error.toString(),Toast.LENGTH_SHORT).show();
-			}
-		});
+		);
 		
 		Button groupButton=binding.groupButton;
 		EditText
 				groupDescriptionEditText=binding.groupDescriptionEditText,
 				groupNameEditText=binding.groupNameEditText;
 		
-		groupButton.setOnClickListener(v->
-		{
-			String
-					groupDescription=groupDescriptionEditText.getText().toString(),
-					groupName=groupNameEditText.getText().toString();
-			
-			if(!groupName.isEmpty())
-				if(groupButton.getText().equals("CREATE GROUP"))
-					groupsDatabaseReference.child(groupName).child("Description").setValue(groupDescription);
-				else //if(groupButton.getText().equals("DELETE GROUP"))
-					groupsDatabaseReference.child(groupName).removeValue();
+		groupButton.setOnClickListener
+		(
+			v->
+			{
+				String
+						groupDescription=groupDescriptionEditText.getText().toString(),
+						groupName=groupNameEditText.getText().toString();
 				
-			groupDescriptionEditText.setText(null);
-			groupNameEditText.setText(null);
-		});
+				if(!groupName.isEmpty())
+					if(groupButton.getText().equals("DELETE GROUP"))
+						groupsDatabaseReference.child(groupName).removeValue();
+					else //if(groupButton.getText().equals("CREATE GROUP")||groupButton.getText().equals("UPDATE GROUP"))
+						groupsDatabaseReference.child(groupName).child("Description").setValue(groupDescription);
+					
+				groupDescriptionEditText.setText(null);
+				groupNameEditText.setText(null);
+			}
+		);
+		
+		groupDescriptionEditText.addTextChangedListener
+		(
+			new TextWatcher()
+			{
+				@Override
+				public void beforeTextChanged(CharSequence s,int start,int count,int after){}
+				
+				@Override
+				public void onTextChanged(CharSequence s,int start,int before,int count){}
+				
+				@Override
+				public void afterTextChanged(Editable s)
+				{
+					if(s.toString().isEmpty())
+						for(GroupClass groupClass:groupsClassArrayList)
+							if(groupClass.getName().equals(groupNameEditText.getText().toString()))
+							{
+								groupButton.setText("DELETE GROUP");
+								groupButton.setBackgroundColor(getResources().getColor(R.color.red));
+								
+								break;
+							}
+							else
+							{
+								groupButton.setText("CREATE GROUP");
+								groupButton.setBackgroundColor(getResources().getColor(R.color.green));
+							}
+					else //if(!s.toString().isEmpty())
+						for(GroupClass groupClass:groupsClassArrayList)
+							if(groupClass.getName().equals(groupNameEditText.getText().toString()))
+							{
+								groupButton.setText("UPDATE GROUP");
+								groupButton.setBackgroundColor(getResources().getColor(R.color.blue));
+								
+								break;
+							}
+							else
+							{
+								groupButton.setText("CREATE GROUP");
+								groupButton.setBackgroundColor(getResources().getColor(R.color.green));
+							}
+				}
+			}
+		);
 		
 		groupNameEditText.addTextChangedListener(new TextWatcher(){
 			@Override
@@ -152,13 +204,26 @@ import java.util.ArrayList;
 			@Override
 			public void afterTextChanged(Editable s)
 			{
-				if(!s.toString().isEmpty())
+				if(s.toString().isEmpty())
+				{
+					groupButton.setText("CREATE GROUP");
+					groupButton.setBackgroundColor(getResources().getColor(R.color.green));
+				}
+				else
 					for(GroupClass groupClass:groupsClassArrayList)
 						if(groupClass.getName().equals(s.toString()))
-						{
-							groupButton.setText("DELETE GROUP");
-							groupButton.setBackgroundColor(getResources().getColor(R.color.red));
-						}
+							if(groupDescriptionEditText.getText().toString().isEmpty())
+							{
+								groupButton.setText("DELETE GROUP");
+								groupButton.setBackgroundColor(getResources().getColor(R.color.red));
+								
+								break;
+							}
+							else
+							{
+								groupButton.setText("UPDATE GROUP");
+								groupButton.setBackgroundColor(getResources().getColor(R.color.blue));
+							}
 						else
 						{
 							groupButton.setText("CREATE GROUP");

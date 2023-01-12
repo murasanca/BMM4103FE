@@ -1,3 +1,6 @@
+ // Murat Sancak
+// 201913709082
+
 package com.murasanca.BMM4103FE;
 
 import android.content.Context;
@@ -14,7 +17,7 @@ public class GroupAdapter extends RecyclerView.Adapter<GroupViewHolder>
 	Context context;
 	List<GroupClass> groupClassList;
 	
-	public GroupAdapter(Context context,List<GroupClass> groupClassList)
+	public GroupAdapter(Context context,List<GroupClass>groupClassList)
 	{
 		this.context=context;
 		this.groupClassList=groupClassList;
@@ -42,3 +45,6 @@ public class GroupAdapter extends RecyclerView.Adapter<GroupViewHolder>
 		return groupClassList.size();
 	}
 }
+
+ // 201913709082
+// Murat Sancak
