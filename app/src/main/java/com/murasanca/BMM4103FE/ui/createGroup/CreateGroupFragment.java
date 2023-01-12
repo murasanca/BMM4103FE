@@ -139,9 +139,9 @@ import java.util.ArrayList;
 						groupName=groupNameEditText.getText().toString();
 				
 				if(!groupName.isEmpty())
-					if(groupButton.getText().equals("DELETE GROUP"))
+					if(groupButton.getText().equals(getResources().getText(R.string.deleteGroupButton)))
 						groupsDatabaseReference.child(groupName).removeValue();
-					else //if(groupButton.getText().equals("CREATE GROUP")||groupButton.getText().equals("UPDATE GROUP"))
+					else //if(groupButton.getText().equals(getResources().getText(R.string.createGroupButton))||groupButton.getText().equals(getResources().getText(R.string.updateGroupButton)))
 						groupsDatabaseReference.child(groupName).child("Description").setValue(groupDescription);
 					
 				groupDescriptionEditText.setText(null);
@@ -166,28 +166,28 @@ import java.util.ArrayList;
 						for(GroupClass groupClass:groupsClassArrayList)
 							if(groupClass.getName().equals(groupNameEditText.getText().toString()))
 							{
-								groupButton.setText("DELETE GROUP");
+								groupButton.setText(getResources().getText(R.string.deleteGroupButton));
 								groupButton.setBackgroundColor(getResources().getColor(R.color.red));
 								
 								break;
 							}
 							else
 							{
-								groupButton.setText("CREATE GROUP");
+								groupButton.setText(getResources().getText(R.string.createGroupButton));
 								groupButton.setBackgroundColor(getResources().getColor(R.color.green));
 							}
 					else //if(!s.toString().isEmpty())
 						for(GroupClass groupClass:groupsClassArrayList)
 							if(groupClass.getName().equals(groupNameEditText.getText().toString()))
 							{
-								groupButton.setText("UPDATE GROUP");
+								groupButton.setText(getResources().getText(R.string.updateGroupButton));
 								groupButton.setBackgroundColor(getResources().getColor(R.color.blue));
 								
 								break;
 							}
 							else
 							{
-								groupButton.setText("CREATE GROUP");
+								groupButton.setText(getResources().getText(R.string.createGroupButton));
 								groupButton.setBackgroundColor(getResources().getColor(R.color.green));
 							}
 				}
@@ -206,7 +206,7 @@ import java.util.ArrayList;
 			{
 				if(s.toString().isEmpty())
 				{
-					groupButton.setText("CREATE GROUP");
+					groupButton.setText(getResources().getText(R.string.createGroupButton));
 					groupButton.setBackgroundColor(getResources().getColor(R.color.green));
 				}
 				else
@@ -214,19 +214,19 @@ import java.util.ArrayList;
 						if(groupClass.getName().equals(s.toString()))
 							if(groupDescriptionEditText.getText().toString().isEmpty())
 							{
-								groupButton.setText("DELETE GROUP");
+								groupButton.setText(getResources().getText(R.string.deleteGroupButton));
 								groupButton.setBackgroundColor(getResources().getColor(R.color.red));
 								
 								break;
 							}
 							else
 							{
-								groupButton.setText("UPDATE GROUP");
+								groupButton.setText(getResources().getText(R.string.updateGroupButton));
 								groupButton.setBackgroundColor(getResources().getColor(R.color.blue));
 							}
 						else
 						{
-							groupButton.setText("CREATE GROUP");
+							groupButton.setText(getResources().getText(R.string.createGroupButton));
 							groupButton.setBackgroundColor(getResources().getColor(R.color.green));
 						}
 			}
