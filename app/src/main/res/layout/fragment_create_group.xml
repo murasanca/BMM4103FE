@@ -18,7 +18,7 @@
         android:textSize="32sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
         android:fontFamily="casual"
@@ -31,12 +31,13 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/createGroupTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/createGroupTextView"/>
 
     <EditText
         android:backgroundTint="@color/white"
         android:ems="1"
         android:fontFamily="casual"
+        android:gravity="center"
         android:hint="@string/inputField4GroupName"
         android:id="@+id/groupNameEditText"
         android:importantForAutofill="no"
@@ -96,6 +97,7 @@
         android:backgroundTint="@color/white"
         android:ems="1"
         android:fontFamily="casual"
+        android:gravity="center"
         android:hint="@string/inputField4Description"
         android:id="@+id/groupDescriptionEditText"
         android:importantForAutofill="no"
@@ -117,42 +119,57 @@
         android:backgroundTint="@color/green"
         android:fontFamily="casual"
         android:id="@+id/groupButton"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:layout_width="wrap_content"
         android:text="@string/createGroupButton"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/groupDescriptionEditText" />
+        app:layout_constraintTop_toBottomOf="@+id/groupDescriptionEditText"/>
 
     <TextView
+        android:fontFamily="casual"
         android:id="@+id/groupsTextView"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:fontFamily="casual"
+        android:layout_width="wrap_content"
         android:text="@string/groupsTextView"
         android:textColor="@color/white"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/groupButton" />
+        app:layout_constraintTop_toBottomOf="@+id/groupButton"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:background="@color/white"
         android:id="@+id/groupsRecyclerView"
         android:layout_height="0dp"
-        android:layout_width="0dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="8dp"
         android:layout_marginEnd="32dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/numberNameSurnameHomeTextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/groupsTextView"/>
+
+    <TextView
+        android:fontFamily="casual"
+        android:gravity="center"
+        android:id="@+id/numberNameSurnameHomeTextView"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_width="wrap_content"
+        android:text="@string/numberNameSurnameTextView"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

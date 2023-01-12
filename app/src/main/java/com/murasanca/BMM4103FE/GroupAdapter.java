@@ -36,7 +36,10 @@ public class GroupAdapter extends RecyclerView.Adapter<GroupViewHolder>
 		holder.description.setText(groupClassList.get(position).getDescription());
 		holder.imageView.setImageResource(R.drawable.ic_round_groups_24);
 		holder.name.setText(groupClassList.get(position).getName());
-		holder.position.setText(String.valueOf(1+position));
+		if(10>position)
+			holder.position.setText("0".concat(String.valueOf(1+position)));
+		else
+			holder.position.setText(String.valueOf(1+position));
 	}
 	
 	@Override

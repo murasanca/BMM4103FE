@@ -38,7 +38,18 @@
     <string name="gImageView">Group Image View</string>
     <string name="gNameTextView">Group Name Text View</string>
     <string name="gDescriptionTextView">Group Description Text View</string>
-    <string name="gPositionTextView">1</string>
+    <string name="gPositionTextView">01</string>
+
+    <string name="messageNameTextView">Message Name</string>
+    <string name="inputField4MessageName">Input Field for Message Name</string>
+    <string name="messageTextView">Message</string>
+    <string name="inputField4Message">Input Field for Message</string>
+    <string name="createMessageButton">CREATE MESSAGE</string>
+    <string name="messagesTextView">Messages</string>
+
+    <string name="mNameTextView">Message Name Text View</string>
+    <string name="mTextView">Message Text View</string>
+    <string name="mPositionTextView">01</string>
 
     <string name="numberNameSurnameTextView">201913709082 — Murat Sancak</string>
 </resources>

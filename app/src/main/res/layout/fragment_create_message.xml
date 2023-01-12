@@ -1,8 +1,148 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@drawable/bmm4103fe"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.createMessage.CreateMessageFragment">
+
+    <TextView
+        android:fontFamily="casual"
+        android:id="@+id/createMessageTextView"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_width="wrap_content"
+        android:text="@string/createMessageFragment"
+        android:textColor="@color/white"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:fontFamily="casual"
+        android:id="@+id/messageNameTextView"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_width="wrap_content"
+        android:text="@string/messageNameTextView"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/createMessageTextView"/>
+
+    <EditText
+        android:backgroundTint="@color/white"
+        android:ems="1"
+        android:fontFamily="casual"
+        android:gravity="center"
+        android:hint="@string/inputField4MessageName"
+        android:id="@+id/messageNameEditText"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_width="256dp"
+        android:minHeight="48dp"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/messageNameTextView"/>
+
+    <TextView
+        android:fontFamily="casual"
+        android:id="@+id/messageTextView"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_width="wrap_content"
+        android:text="@string/messageTextView"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/messageNameEditText"/>
+
+    <EditText
+        android:backgroundTint="@color/white"
+        android:ems="1"
+        android:fontFamily="casual"
+        android:gravity="center"
+        android:hint="@string/inputField4Message"
+        android:id="@+id/messageEditText"
+        android:importantForAutofill="no"
+        android:inputType="textMultiLine"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_width="256dp"
+        android:minHeight="128dp"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/messageTextView"/>
+
+    <Button
+        android:backgroundTint="@color/green"
+        android:fontFamily="casual"
+        android:id="@+id/createMessageButton"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_width="wrap_content"
+        android:text="@string/createMessageButton"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/messageEditText"/>
+
+    <TextView
+        android:fontFamily="casual"
+        android:id="@+id/messagesTextView"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_width="wrap_content"
+        android:text="@string/messagesTextView"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/createMessageButton"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:background="@color/white"
+        android:id="@+id/groupsRecyclerView"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_width="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/numberNameSurnameHomeTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/messagesTextView"/>
+
+    <TextView
+        android:fontFamily="casual"
+        android:gravity="center"
+        android:id="@+id/numberNameSurnameHomeTextView"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_width="wrap_content"
+        android:text="@string/numberNameSurnameTextView"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

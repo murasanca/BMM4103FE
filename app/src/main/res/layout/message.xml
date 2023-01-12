@@ -5,43 +5,29 @@
     android:layout_height="match_parent"
     android:layout_width="match_parent">
 
-    <ImageView
-        android:background="@color/transparent"
-        android:contentDescription="@string/gImageView"
-        android:id="@+id/gImageView"
-        android:layout_height="64dp"
-        android:layout_marginBottom="4dp"
+    <TextView
+        android:id="@+id/mNameTextView"
+        android:layout_width="0sp"
+        android:layout_height="0sp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="4dp"
-        android:layout_width="64dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_round_groups_24"/>
-
-    <TextView
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="4dp"
         android:fontFamily="casual"
         android:gravity="center"
-        android:id="@+id/gNameTextView"
-        android:layout_height="0sp"
-        android:layout_marginBottom="4dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="4dp"
-        android:layout_width="0sp"
-        android:text="@string/gNameTextView"
+        android:text="@string/mNameTextView"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/gDescriptionTextView"
-        app:layout_constraintEnd_toStartOf="@+id/gNumberTextView"
-        app:layout_constraintStart_toEndOf="@+id/gImageView"
+        app:layout_constraintBottom_toTopOf="@+id/mTextView"
+        app:layout_constraintEnd_toStartOf="@+id/mNumberTextView"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:fontFamily="casual"
         android:gravity="center"
-        android:id="@+id/gNumberTextView"
+        android:id="@+id/mNumberTextView"
         android:layout_height="64dp"
         android:layout_width="64dp"
         android:layout_marginBottom="4dp"
@@ -56,21 +42,21 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:fontFamily="casual"
-        android:gravity="center"
-        android:id="@+id/gDescriptionTextView"
-        android:layout_height="0sp"
+        android:id="@+id/mTextView"
         android:layout_width="0sp"
-        android:layout_marginBottom="4dp"
-        android:layout_marginEnd="8dp"
+        android:layout_height="0sp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="4dp"
-        android:text="@string/gDescriptionTextView"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="4dp"
+        android:fontFamily="casual"
+        android:gravity="center"
+        android:text="@string/mTextView"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/gNumberTextView"
-        app:layout_constraintStart_toEndOf="@+id/gImageView"
-        app:layout_constraintTop_toBottomOf="@+id/gNameTextView" />
+        app:layout_constraintEnd_toStartOf="@+id/mNumberTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mNameTextView" />
 </androidx.constraintlayout.widget.ConstraintLayout>
