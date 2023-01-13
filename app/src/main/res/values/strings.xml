@@ -45,6 +45,8 @@
     <string name="messageTextView">Message</string>
     <string name="inputField4Message">Input Field for Message</string>
     <string name="createMessageButton">CREATE MESSAGE</string>
+    <string name="deleteMessageButton">DELETE MESSAGE</string>
+    <string name="updateMessageButton">UPDATE MESSAGE</string>
     <string name="messagesTextView">Messages</string>
 
     <string name="mNameTextView">Message Name Text View</string>

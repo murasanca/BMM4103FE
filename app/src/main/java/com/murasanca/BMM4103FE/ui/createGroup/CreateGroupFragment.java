@@ -32,6 +32,7 @@ import com.murasanca.BMM4103FE.R;
 import com.murasanca.BMM4103FE.databinding.FragmentCreateGroupBinding;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
  public class CreateGroupFragment extends Fragment
 {
@@ -46,13 +47,12 @@ import java.util.ArrayList;
 		
 		FirebaseAuth firebaseAuth=FirebaseAuth.getInstance();
 		FirebaseDatabase firebaseDatabase=FirebaseDatabase.getInstance();
-		DatabaseReference groupsDatabaseReference=firebaseDatabase.getReference("Users").child(firebaseAuth.getUid()).child("Groups");
+		DatabaseReference groupsDatabaseReference=firebaseDatabase.getReference("Users").child(Objects.requireNonNull(firebaseAuth.getUid())).child("Groups");
 		
-		ArrayList<GroupClass>groupsClassArrayList=new ArrayList<>();
+		ArrayList<GroupClass>groupClassArrayList=new ArrayList<>();
 		RecyclerView groupsRecyclerView=binding.groupsRecyclerView;
-		RecyclerView.LayoutManager layoutManager=new LinearLayoutManager(getContext());
-		groupsRecyclerView.setLayoutManager(layoutManager);
-		GroupAdapter groupAdapter=new GroupAdapter(root.getContext().getApplicationContext(),groupsClassArrayList);
+		groupsRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+		GroupAdapter groupAdapter=new GroupAdapter(root.getContext().getApplicationContext(),groupClassArrayList);
 		groupsRecyclerView.setAdapter(groupAdapter);
 		
 		groupsDatabaseReference.addChildEventListener
@@ -62,26 +62,26 @@ import java.util.ArrayList;
 				@Override
 				public void onChildAdded(@NonNull DataSnapshot snapshot,@Nullable String previousChildName)
 				{
-					groupsClassArrayList.add(new GroupClass(snapshot.getKey(),snapshot.child("Description").getValue(String.class)));
+					groupClassArrayList.add(new GroupClass(snapshot.getKey(),snapshot.child("Description").getValue(String.class)));
 					
-					groupAdapter.notifyDataSetChanged();
+					groupAdapter.notifyItemInserted(groupClassArrayList.size());
 				}
 				
 				@Override
 				public void onChildChanged(@NonNull DataSnapshot snapshot,@Nullable String previousChildName)
 				{
 					int index=-1;
-					for(int i=0;i<groupsClassArrayList.size();++i)
-						if(groupsClassArrayList.get(i).getName().equals(snapshot.getKey()))
+					for(int i=0;i<groupClassArrayList.size();++i)
+						if(groupClassArrayList.get(i).getName().equals(snapshot.getKey()))
 						{
 							index=i;
 							break;
 						}
 					if(-1!=index)
 					{
-						groupsClassArrayList.set(index,new GroupClass(snapshot.getKey(),snapshot.child("Description").getValue(String.class)));
+						groupClassArrayList.set(index,new GroupClass(snapshot.getKey(),snapshot.child("Description").getValue(String.class)));
 						
-						groupAdapter.notifyDataSetChanged();
+						groupAdapter.notifyItemChanged(index);
 					}
 				}
 				
@@ -89,31 +89,32 @@ import java.util.ArrayList;
 				public void onChildRemoved(@NonNull DataSnapshot snapshot)
 				{
 					int index=-1;
-					for(int i=0;i<groupsClassArrayList.size();++i)
-						if(groupsClassArrayList.get(i).getName().equals(snapshot.getKey()))
+					for(int i=0;i<groupClassArrayList.size();++i)
+						if(groupClassArrayList.get(i).getName().equals(snapshot.getKey()))
 						{
 							index=i;
 							break;
 						}
 					if(-1!=index)
 					{
-						groupsClassArrayList.remove(index);
+						groupClassArrayList.remove(index);
 						
-						groupAdapter.notifyDataSetChanged();
+						groupAdapter.notifyItemRemoved(index);
 					}
 				}
 				
 				@Override
 				public void onChildMoved(@NonNull DataSnapshot snapshot,@Nullable String previousChildName)
 				{
-					int index=groupsClassArrayList.indexOf(new GroupClass(snapshot.getKey(),null));
-					if(-1!=index)
+					int fromPosition=groupClassArrayList.indexOf(new GroupClass(snapshot.getKey(),null));
+					if(-1!=fromPosition)
 					{
-						GroupClass groupClass=groupsClassArrayList.get(index);
-						groupsClassArrayList.remove(index);
-						groupsClassArrayList.add(1+index,groupClass);
+						GroupClass groupClass=groupClassArrayList.get(fromPosition);
+						groupClassArrayList.remove(fromPosition);
+						int toPosition=1+fromPosition;
+						groupClassArrayList.add(toPosition,groupClass);
 						
-						groupAdapter.notifyDataSetChanged();
+						groupAdapter.notifyItemMoved(fromPosition, toPosition);
 					}
 				}
 				
@@ -163,7 +164,7 @@ import java.util.ArrayList;
 				public void afterTextChanged(Editable s)
 				{
 					if(s.toString().isEmpty())
-						for(GroupClass groupClass:groupsClassArrayList)
+						for(GroupClass groupClass:groupClassArrayList)
 							if(groupClass.getName().equals(groupNameEditText.getText().toString()))
 							{
 								groupButton.setText(getResources().getText(R.string.deleteGroupButton));
@@ -177,7 +178,7 @@ import java.util.ArrayList;
 								groupButton.setBackgroundColor(getResources().getColor(R.color.green));
 							}
 					else //if(!s.toString().isEmpty())
-						for(GroupClass groupClass:groupsClassArrayList)
+						for(GroupClass groupClass:groupClassArrayList)
 							if(groupClass.getName().equals(groupNameEditText.getText().toString()))
 							{
 								groupButton.setText(getResources().getText(R.string.updateGroupButton));
@@ -210,7 +211,7 @@ import java.util.ArrayList;
 					groupButton.setBackgroundColor(getResources().getColor(R.color.green));
 				}
 				else
-					for(GroupClass groupClass:groupsClassArrayList)
+					for(GroupClass groupClass:groupClassArrayList)
 						if(groupClass.getName().equals(s.toString()))
 							if(groupDescriptionEditText.getText().toString().isEmpty())
 							{
