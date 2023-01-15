@@ -1,4 +1,4 @@
- // Murat Sancak
+// Murat Sancak
 // 201913709082
 
 package com.murasanca.BMM4103FE;
@@ -10,21 +10,20 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class GroupViewHolder extends RecyclerView.ViewHolder
+public class SelectableGroupViewHolder extends RecyclerView.ViewHolder
 {
 	ImageView imageView;
-	TextView description,name,position;
+	TextView description,name;
 	
-	public GroupViewHolder(@NonNull View itemView)
+	public SelectableGroupViewHolder(@NonNull View itemView)
 	{
 		super(itemView);
 		
 		description=itemView.findViewById(R.id.gDescriptionTextView);
 		imageView=itemView.findViewById(R.id.gImageView);
 		name=itemView.findViewById(R.id.gNameTextView);
-		position=itemView.findViewById(R.id.gNumberTextView);
 	}
 }
 
- // 201913709082
+// 201913709082
 // Murat Sancak

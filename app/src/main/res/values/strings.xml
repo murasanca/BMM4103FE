@@ -53,5 +53,11 @@
     <string name="mTextView">Message Text View</string>
     <string name="mPositionTextView">01</string>
 
+    <string name="selectedGroupTextView">Selected Group</string>
+    <string name="contactsTextView">Contacts</string>
+    <string name="contactTextView">Contact Text View</string>
+    <string name="phoneTextView">Phone Text View</string>
+    <string name="contactPositionTextView">01</string>
+
     <string name="numberNameSurnameTextView">201913709082 — Murat Sancak</string>
 </resources>
