@@ -1,7 +1,7 @@
  // Murat Sancak
 // 201913709082
 
-package com.murasanca.BMM4103FE;
+package com.murasanca.BMM4103FE.ui.createGroup;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,6 +9,8 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.murasanca.BMM4103FE.R;
 
 import java.util.List;
 

@@ -1,16 +1,24 @@
- // Murat Sancak
-// 201913709082
-
-package com.murasanca.BMM4103FE;
+package com.murasanca.BMM4103FE.ui.sendMessage;
 
 public class MessageClass
 {
+	Boolean isSelected=false;
 	String message,name;
 	
-	public MessageClass(String name,String message)
+	public MessageClass(String message,String name)
 	{
 		this.message=message;
 		this.name=name;
+	}
+	
+	public Boolean getSelected()
+	{
+		return isSelected;
+	}
+	
+	public void setSelected(Boolean selected)
+	{
+		isSelected=selected;
 	}
 	
 	public String getMessage()
@@ -33,6 +41,3 @@ public class MessageClass
 		this.name=name;
 	}
 }
-
- // 201913709082
-// Murat Sancak

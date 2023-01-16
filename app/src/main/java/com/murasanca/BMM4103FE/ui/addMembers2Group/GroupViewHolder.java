@@ -1,7 +1,7 @@
 // Murat Sancak
 // 201913709082
 
-package com.murasanca.BMM4103FE;
+package com.murasanca.BMM4103FE.ui.addMembers2Group;
 
 import android.view.View;
 import android.widget.ImageView;
@@ -10,12 +10,14 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class SelectableGroupViewHolder extends RecyclerView.ViewHolder
+import com.murasanca.BMM4103FE.R;
+
+public class GroupViewHolder extends RecyclerView.ViewHolder
 {
 	ImageView imageView;
 	TextView description,name;
 	
-	public SelectableGroupViewHolder(@NonNull View itemView)
+	public GroupViewHolder(@NonNull View itemView)
 	{
 		super(itemView);
 		
@@ -25,5 +27,5 @@ public class SelectableGroupViewHolder extends RecyclerView.ViewHolder
 	}
 }
 
-// 201913709082
+ // 201913709082
 // Murat Sancak

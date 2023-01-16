@@ -1,14 +1,14 @@
-// Murat Sancak
+ // Murat Sancak
 // 201913709082
 
-package com.murasanca.BMM4103FE;
+package com.murasanca.BMM4103FE.ui.addMembers2Group;
 
-public class SelectableGroupClass
+public class GroupClass
 {
 	Boolean isSelected=false;
 	String description,name;
 	
-	public SelectableGroupClass(String name,String description)
+	public GroupClass(String name,String description)
 	{
 		this.description=description;
 		this.name=name;
@@ -45,5 +45,5 @@ public class SelectableGroupClass
 	}
 }
 
-// 201913709082
+ // 201913709082
 // Murat Sancak

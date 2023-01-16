@@ -1,7 +1,7 @@
  // Murat Sancak
 // 201913709082
 
-package com.murasanca.BMM4103FE;
+package com.murasanca.BMM4103FE.ui.addMembers2Group;
 
  import android.view.View;
  import android.widget.ImageView;
@@ -11,8 +11,9 @@ package com.murasanca.BMM4103FE;
  import androidx.recyclerview.widget.RecyclerView;
 
  import com.google.firebase.database.DatabaseReference;
+ import com.murasanca.BMM4103FE.R;
 
-public class ContactViewHolder extends RecyclerView.ViewHolder
+ public class ContactViewHolder extends RecyclerView.ViewHolder
 {
 	ImageView imageView;
 	TextView contact,phone,position;

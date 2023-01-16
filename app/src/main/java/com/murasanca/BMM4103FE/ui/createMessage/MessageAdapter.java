@@ -1,7 +1,7 @@
  // Murat Sancak
 // 201913709082
 
-package com.murasanca.BMM4103FE;
+package com.murasanca.BMM4103FE.ui.createMessage;
 
  import android.content.Context;
  import android.view.LayoutInflater;
@@ -9,6 +9,8 @@ package com.murasanca.BMM4103FE;
 
  import androidx.annotation.NonNull;
  import androidx.recyclerview.widget.RecyclerView;
+
+ import com.murasanca.BMM4103FE.R;
 
  import java.util.List;
 
@@ -35,6 +37,7 @@ package com.murasanca.BMM4103FE;
 	{
 		holder.message.setText(messageClassList.get(position).getMessage());
 		holder.name.setText(messageClassList.get(position).getName());
+		
 		if(10>position)
 			holder.position.setText("0".concat(String.valueOf(1+position)));
 		else

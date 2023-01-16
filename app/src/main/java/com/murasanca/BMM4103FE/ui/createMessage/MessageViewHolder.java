@@ -1,13 +1,15 @@
  // Murat Sancak
 // 201913709082
 
-package com.murasanca.BMM4103FE;
+package com.murasanca.BMM4103FE.ui.createMessage;
 
  import android.view.View;
  import android.widget.TextView;
 
  import androidx.annotation.NonNull;
  import androidx.recyclerview.widget.RecyclerView;
+
+ import com.murasanca.BMM4103FE.R;
 
  public class MessageViewHolder extends RecyclerView.ViewHolder
 {

@@ -59,5 +59,8 @@
     <string name="phoneTextView">Phone Text View</string>
     <string name="contactPositionTextView">01</string>
 
+    <string name="selectedMessageTextView">Selected Message</string>
+    <string name="sendBulkMessageButton">SEND BULK MESSAGE</string>
+
     <string name="numberNameSurnameTextView">201913709082 — Murat Sancak</string>
 </resources>

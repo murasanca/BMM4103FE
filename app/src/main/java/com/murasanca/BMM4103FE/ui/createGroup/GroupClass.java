@@ -1,7 +1,7 @@
  // Murat Sancak
 // 201913709082
 
-package com.murasanca.BMM4103FE;
+package com.murasanca.BMM4103FE.ui.createGroup;
 
 public class GroupClass
 {

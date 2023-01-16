@@ -16,7 +16,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -26,8 +25,6 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.murasanca.BMM4103FE.GroupAdapter;
-import com.murasanca.BMM4103FE.GroupClass;
 import com.murasanca.BMM4103FE.R;
 import com.murasanca.BMM4103FE.databinding.FragmentCreateGroupBinding;
 
@@ -40,8 +37,6 @@ import java.util.Objects;
 	
 	public View onCreateView(@NonNull LayoutInflater inflater,ViewGroup container,Bundle savedInstanceState)
 	{
-		CreateGroupViewModel createGroupViewModel=new ViewModelProvider(this).get(CreateGroupViewModel.class);
-		
 		binding=FragmentCreateGroupBinding.inflate(inflater,container,false);
 		View root=binding.getRoot();
 		
@@ -128,8 +123,8 @@ import java.util.Objects;
 		
 		Button groupButton=binding.groupButton;
 		EditText
-				groupDescriptionEditText=binding.groupDescriptionEditText,
-				groupNameEditText=binding.groupNameEditText;
+			groupDescriptionEditText=binding.groupDescriptionEditText,
+			groupNameEditText=binding.groupNameEditText;
 		
 		groupButton.setOnClickListener
 		(

@@ -1,17 +1,17 @@
  // Murat Sancak
 // 201913709082
 
-package com.murasanca.BMM4103FE;
+package com.murasanca.BMM4103FE.ui.addMembers2Group;
 
  import android.content.Context;
  import android.view.LayoutInflater;
  import android.view.ViewGroup;
- import android.widget.Toast;
 
  import androidx.annotation.NonNull;
  import androidx.recyclerview.widget.RecyclerView;
 
  import com.google.firebase.database.DatabaseReference;
+ import com.murasanca.BMM4103FE.R;
 
  import java.util.ArrayList;
  import java.util.List;

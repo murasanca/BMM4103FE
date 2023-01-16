@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent"/>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/selectableGroupRecyclerView"
+        android:id="@+id/group_recycler_view"
         android:layout_width="0dp"
         android:layout_height="128dp"
         android:layout_marginStart="16dp"
@@ -43,7 +43,7 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/selectableGroupRecyclerView" />
+        app:layout_constraintTop_toBottomOf="@+id/group_recycler_view" />
 
     <TextView
         android:id="@+id/contactsTextView"
